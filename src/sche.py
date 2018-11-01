@@ -1,3 +1,4 @@
+
 # coding:utf-8
 
 import gevent
@@ -9,10 +10,12 @@ import datetime
 
 
 def aps_test():
-    print (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    with open("c://s.txt", "a+") as f:
+        f.write(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        f.write('\n')
 
 def aps_test1():
-    print ('test1')
+    print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 def sche():
 	scheduler = BlockingScheduler()
@@ -30,3 +33,9 @@ gevent.joinall([
     gevent.spawn(sche),
     gevent.spawn(bar),
 ])
+
+
+
+
+
+
